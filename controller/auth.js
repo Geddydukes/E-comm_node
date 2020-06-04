@@ -75,7 +75,7 @@ const login = (req, res) => {
         message: "Something went wrong. Please try again.",
       });
 
-    if (foundUser)
+    if (!foundUser)
       return res.status(400).json({
         status: 400,
         message: "A user with that email address already exists!",
