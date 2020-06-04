@@ -13,3 +13,7 @@ mongoose
   .connect(connectionString, configOptions)
   .then(() => console.log("MongoDB connection successful"))
   .catch((err) => console.log(`MongoDB connection error: ${err}`));
+
+module.exports = {
+  User: require("./user"),
+};
