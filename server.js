@@ -33,5 +33,6 @@ app.use(
 
 app.use("/api/v1/users", routes.users);
 app.use("/api/v1/auth", routes.auth);
+app.use("/api/v1/products", routes.products);
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
