@@ -156,37 +156,3 @@ module.exports = {
   updateReview,
   showReview,
 };
-
-// await db.User.findById(
-//     req.session.currentUser.id,
-//     (err, foundUser) => {
-//       if (err) return console.log("Error in review.update:", err);
-
-//       if (!foundUser)
-//         return res.json({
-//           message: "No User found please log in",
-//         });
-//       if (foundUser._id === req.params._id) {
-//         const options = { new: true };
-//         db.Review.findByIdAndUpdate(
-//           req.params._id,
-//           req.body,
-//           options,
-//           (err, updatedreview) => {
-//             if (err) return console.log("Error in review.update:", err);
-//             if (!updatedreview)
-//               return res.json({
-//                 message: "No review found",
-//               });
-
-//             res.status(200).json({ review: updatedreview });
-//           }
-//         );
-//       } else {
-//         return res.json({
-//           message:
-//             "Sorry only the original poster may edit reviews, please sign in.",
-//         });
-//       }
-//     }
-//   );
