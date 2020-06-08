@@ -23,6 +23,12 @@ const ProductSchema = mongoose.Schema({
       required: [true, "Please include at least one tag"],
     },
   ],
+  reviews: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Review",
+    },
+  ],
 });
 
 const Product = mongoose.model("Product", ProductSchema);

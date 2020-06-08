@@ -17,7 +17,7 @@ const showProduct = (req, res) => {
   db.Product.findById(req.params.id, (err, foundProduct) => {
     if (err) return console.log("Error in product.oneProduct:", err);
 
-    if (!foundProducts)
+    if (!foundProduct)
       return res.json({
         message: "No product found in database. Please try again later.",
       });
@@ -37,7 +37,7 @@ const createProduct = (req, res) => {
 };
 
 const updateProduct = (req, res) => {
-  db.User.findById(req.session.currentUser.id, (err, foundUser) => {
+  db.User.findByIdAndUpdate(req.session.currentUser.id, (err, foundUser) => {
     if (err) return console.log("Error in product.update:", err);
 
     if (!foundUser)
