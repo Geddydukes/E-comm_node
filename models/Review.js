@@ -19,6 +19,12 @@ const ReviewSchema = mongoose.Schema({
     ref: "product",
     required: [true, "A review must be left on a Product."],
   },
+  comments: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "review",
+    },
+  ],
 });
 
 const Review = mongoose.model("Review", ReviewSchema);

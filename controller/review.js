@@ -135,18 +135,13 @@ const updateReview = async (req, res) => {
 };
 
 const showReview = async (req, res) => {
-  db.Review.findById(req.params._id, (err, foundReview) => {
-    if (err) return res.json({ message: "err in show.review", err });
-
-    if (!foundReview)
-      return res.json({
-        message: "That review doesnt exist",
-      });
-
-    res.status(200).json({
-      review: foundReview,
-    });
-  });
+  try {
+    const foundReview = db.Review.findById(req.params._id).populate("comments");
+    if (!foundReview) return res.json({ message: "That review doesnt exist" });
+    res.status(200).json({ review: foundReview });
+  } catch (err) {
+    return console.log(err);
+  }
 };
 
 module.exports = {

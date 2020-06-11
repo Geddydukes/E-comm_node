@@ -6,10 +6,8 @@ const register = (req, res) => {
     !req.body.firstName ||
     !req.body.lastName ||
     !req.body.email ||
-    !req.body.phoneNumber ||
     !req.body.address ||
-    !req.body.password ||
-    !req.body.code
+    !req.body.password
   ) {
     return res.status(400).json({
       status: 400,
@@ -78,7 +76,7 @@ const login = (req, res) => {
     if (!foundUser)
       return res.status(400).json({
         status: 400,
-        message: "A user with that email address already exists!",
+        message: "No user with that email address exists!",
       });
     bcrypt.compare(req.body.password, foundUser.password, (err, isMatch) => {
       if (err)

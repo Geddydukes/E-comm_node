@@ -11,7 +11,6 @@ const ProductSchema = mongoose.Schema({
   },
   image: {
     type: String,
-    required: [true, "Please include at least one image"],
   },
   description: {
     type: String,
