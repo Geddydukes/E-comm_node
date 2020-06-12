@@ -18,7 +18,6 @@ const corsConfig = {
 
 app.use(cors(corsConfig));
 
-// TODO - create a real secret key
 app.use(
   session({
     store: new MongoStore({ url: "mongodb://localhost:27017/e-commerce" }),
