@@ -55,6 +55,7 @@ const createProduct = async (req, res) => {
 };
 
 const updateProduct = async (req, res) => {
+  console.log(req.body);
   try {
     const foundUser = await db.User.findById(req.session.currentUser.Id);
     if (!foundUser) return res.json({ message: "No User Found Please Log In" });

@@ -4,7 +4,7 @@ const ctrl = require("../controller");
 router.get("/", ctrl.product.indexProduct);
 router.post("/new", ctrl.product.createProduct);
 router.get("/:id", ctrl.product.showProduct);
-router.post("/:id/edit", ctrl.product.updateProduct);
+router.put("/:id/edit", ctrl.product.updateProduct);
 router.delete("/:id", ctrl.product.destroyProduct);
 // Reviews Routes
 router.post("/:id/review", ctrl.review.createReview);
