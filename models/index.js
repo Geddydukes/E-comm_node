@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const connectionString = "mongodb://localhost:27017/e-commerce";
+const connectionString =
+  process.env.MONGODB_URI || "mongodb://localhost:27017/e-commerce";
 
 const configOptions = {
   useNewUrlParser: true,
