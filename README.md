@@ -13,3 +13,7 @@ A site that I built to work on my react skills as well as forray into E-commerce
 - React-bootstrap
 - Stripe
 - Electron
+
+## Use
+
+To use clone this and the react front end repo, npm install the dependencies, npm start this repo then npm start the react repo. This is set to localhost:4000.
